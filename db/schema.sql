@@ -1,4 +1,4 @@
-CREATE DATABASE IF NOT EXISTS burgers_db;
+CREATE DATABASE burgers_db;
 USE burgers_db;
 
 CREATE TABLE IF NOT EXISTS burgers (

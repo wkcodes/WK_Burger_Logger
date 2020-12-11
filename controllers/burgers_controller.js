@@ -15,3 +15,5 @@ router.get("/", (req,res) => {
         res.render("index", handleBurger);
     });
 });
+
+module.exports = router;

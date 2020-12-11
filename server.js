@@ -3,8 +3,9 @@
 // Deps
 let express = require('express');
 let exphbs = require("express-handlebars");
+
 // Import routes
-let routes = require("./controllers/burgers_controller.js");
+let router = require("./controllers/burgers_controller");
 
 // Set port
 let PORT = process.env.PORT || 8080;
@@ -24,7 +25,7 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Set Express to use routes
-app.use(routes);
+app.use(router);
 
 // Set up server to listen on port
 app.listen(PORT, function() {

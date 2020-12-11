@@ -36,7 +36,7 @@ function objToSql(ob) {
 
 //Custom ORM
 let orm = {
-    selectAll: (tableInput, cb) => {
+    all: (tableInput, cb) => {
         let queryString = 'SELECT * FROM burgers;';
         connection.query(queryString, function (err, result) {
             if (err) {

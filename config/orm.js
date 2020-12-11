@@ -1,4 +1,4 @@
-const connection = require('./connection');
+const connection = require('./connection.js');
 
 //Boilerplate
 function printQuestionMarks(num) {
@@ -36,7 +36,7 @@ function objToSql(ob) {
 
 //Custom ORM
 let orm = {
-    selectAll: function (tableInput, cb) {
+    selectAll: (tableInput, cb) => {
         let queryString = 'SELECT * FROM burgers;';
         connection.query(queryString, function (err, result) {
             if (err) {
@@ -45,10 +45,12 @@ let orm = {
             cb(result);
         })
     },
-    create: function(table, cols, vals, cb) {
-        let queryString = 'INSERT INTO burgers';
-
-        queryString 
+    create: (newBurger, cb) => {
+        let queryString = 'INSERT INTO burgers (burger_name) VALUES ?';
+        connection.query(queryString, newBurger, (err, result) => {
+            if(err) throw err;
+            cb(result)
+        })
     }
 }
 

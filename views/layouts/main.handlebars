@@ -1,61 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
-		<title>Burger logger!</title>
-		<script src="https://code.jquery.com/jquery.js"></script>
-		{{!-- <script src="../../public/burgersJQuery.js"></script> --}}
-	</head>
-	<body>
-		{{{ body }}}
-		<script>
-			//On change function for devouring burgers
-console.log("jquery reached")
-$(function () {
-  $(".devour-btn").on("click", function (event) {
-    /* let id = $(this).data("id");
-    let newDevour = $(this).data("newDevour");
+	<title>Burger logger!</title>
+	<script src="https://code.jquery.com/jquery.js"></script>
+</head>
 
-    let newDevourState = {
-      devoured: newDevour
-    };
+<body>
+	
+	{{{ body }}}
 
-    // Send the PUT request.
-    $.ajax("/api/burgers/" + id, {
-      type: "PUT",
-      data: newDevourState,
-    }).then(function () {
-      console.log("burger changed to", newDevour);
-      // Reload the page to get the updated list
-      location.reload();
-    });
-  }); */
+	<script>
 
-    $(".create-burger").on("submit", function (event) {
-      console.log("clicked");
-      // Make sure to preventDefault on a submit event.
-      event.preventDefault();
+		console.log("howboucha")
 
-      let newBurger = {
-        burger_name: $("#burgerName").val().trim(),
-        devoured: false,
-      };
+		$(".create-form").on("submit", function (event) {
+			console.log("clicked");
+			// Make sure to preventDefault on a submit event.
+			event.preventDefault();
 
-      console.log(newBurger);
+			let newBurger = {
+				burger_name: $("#burgerName").val().trim(),
+				devoured: false,
+			};
 
-      // Send the POST request.
-      $.ajax("/api/burgers", {
-        type: "POST",
-        data: newBurger,
-      }).then(function () {
-        console.log("added new burger to the db");
-        // Reload the page to get the updated list
-        location.reload();
-      });
-    });
-  });
-});
+			console.log(newBurger);
 
-		</script>
-	</body>
+			// Send the POST request.
+			$.ajax("/api/burgers", {
+				type: "POST",
+				data: newBurger,
+			}).then(function () {
+				console.log("added new burger to the db");
+				// Reload the page to get the updated list
+				location.reload();
+			});
+		});
+
+
+
+	</script>
+</body>
+
 </html>
+
+//On change function for devouring burgers
+
+/* let id = $(this).data("id");
+let newDevour = $(this).data("newDevour");
+
+let newDevourState = {
+devoured: newDevour
+};
+
+// Send the PUT request.
+$.ajax("/api/burgers/" + id, {
+type: "PUT",
+data: newDevourState,
+}).then(function () {
+console.log("burger changed to", newDevour);
+// Reload the page to get the updated list
+location.reload();
+});
+}); */

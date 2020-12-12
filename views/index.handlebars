@@ -4,7 +4,9 @@
 
 <ul>
     {{#each burgers}}
-       <div> {{ burger_name }} burger_id={{ id }} </div>
+    {{#unless devoured}}
+    <div> {{ burger_name }} </div>
+    {{/unless}}
     {{/each}}
 </ul>
 
@@ -20,7 +22,8 @@
 
 <ul>
     {{#each burgers}}
-        {{#if devoured}}
-        {{/if}}
+    {{#if devoured}}
+    <div> {{ burger_name }} </div>
+    {{/if}}
     {{/each}}
 </ul>

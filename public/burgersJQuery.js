@@ -1,4 +1,5 @@
 //On change function for devouring burgers
+console.log("jquery reached")
 $(function () {
   $(".devour-btn").on("click", function (event) {
     /* let id = $(this).data("id");

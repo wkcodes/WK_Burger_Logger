@@ -29,8 +29,10 @@ $(function () {
       devoured: false
     };
 
+    console.log(newBurger)
+
     // Send the POST request.
-    $.ajax("/api/addburger", {
+    $.ajax("/api/burgers", {
       type: "POST",
       data: newBurger,
     }).then(function () {

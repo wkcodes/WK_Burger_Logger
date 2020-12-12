@@ -1,13 +1,6 @@
 //On change function for devouring burgers
 $(function () {
   $(".devour-btn").on("click", function (event) {
-    console.log("button clicked")
-    let id = $(this).data("id");
-    let newDevour = $(this).data("newdevour");
-
-    let newDevourState = {
-      devour: newDevour,
-    };
 
     // Send the PUT request.
     $.ajax("/api/update/" + id, {
@@ -34,7 +27,7 @@ $(function () {
     // Send the POST request.
     $.ajax("/api/burgers", {
       type: "POST",
-      data: newBurger,
+      data: newBurger
     }).then(function () {
       console.log("added new burger to the db");
       // Reload the page to get the updated list

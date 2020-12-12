@@ -1,6 +1,7 @@
 //On change function for devouring burgers
 $(function () {
   $(".devour-btn").on("click", function (event) {
+    console.log("button clicked")
     let id = $(this).data("id");
     let newDevour = $(this).data("newdevour");
 
@@ -19,7 +20,7 @@ $(function () {
     });
   });
 
-  $(".create-form").on("submit", function (event) {
+  $(".create-burger").on("submit", function (event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
 
@@ -28,11 +29,11 @@ $(function () {
     };
 
     // Send the POST request.
-    $.ajax("/api/newburger", {
+    $.ajax("/api/addburger", {
       type: "POST",
       data: newBurger,
     }).then(function () {
-      console.log("created new cat");
+      console.log("added new burger to the db");
       // Reload the page to get the updated list
       location.reload();
     });

@@ -12,7 +12,7 @@ let orm = {
         })
     },
     create: (newBurger, cb) => {
-        let queryString = "INSERT INTO burgers (burger_name) VALUES ?";
+        let queryString = "INSERT INTO burgers (burger_name) VALUES (?)";
         connection.query(queryString, newBurger, (err, res) => {
             if(err) throw err;
             cb(res)

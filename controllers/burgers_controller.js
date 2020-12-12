@@ -16,4 +16,9 @@ router.get("/", (req,res) => {
     });
 });
 
+router.post("/api/newburger", (req,res) => {
+    burger.create (req.body.burger_name, (result) => {
+        res.json({ id: result.insertId})
+    })
+})
 module.exports = router;

@@ -9,8 +9,8 @@ const burger = {
     });
   },
   // Create a new burger
-  create: (burger_name, cb) => {
-    orm.create(burger_name, (response) => {
+  create: (newBurger, cb) => {
+    orm.create(newBurger, (response) => {
       cb(response);
     });
   },

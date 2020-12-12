@@ -8,13 +8,14 @@
 </head>
 
 <body>
-	
+
 	{{{ body }}}
 
 	<script>
 
-		console.log("howboucha")
+		console.log("Handlebars & JQuery ready...")
 
+		// Create burger 
 		$(".create-form").on("submit", function (event) {
 			console.log("clicked");
 			// Make sure to preventDefault on a submit event.
@@ -38,6 +39,22 @@
 			});
 		});
 
+		// Devour burger
+		$(".devour-btn").on("click", function (event) {
+			let id = $(this).data("burger_id");
+			console.log(id);
+			
+			// Send the PUT request.
+			$.ajax("/api/burgers/" + id, {
+				type: "PUT",
+				data: id,
+			}).then(function () {
+				console.log("burger devoured");
+				// Reload the page to get the updated list
+				location.reload();
+			});
+		});
+
 
 
 	</script>
@@ -45,22 +62,3 @@
 
 </html>
 
-//On change function for devouring burgers
-
-/* let id = $(this).data("id");
-let newDevour = $(this).data("newDevour");
-
-let newDevourState = {
-devoured: newDevour
-};
-
-// Send the PUT request.
-$.ajax("/api/burgers/" + id, {
-type: "PUT",
-data: newDevourState,
-}).then(function () {
-console.log("burger changed to", newDevour);
-// Reload the page to get the updated list
-location.reload();
-});
-}); */

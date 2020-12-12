@@ -14,6 +14,11 @@ let burger = {
       cb(response);
     });
   },
+  update: (burger_id, cb) => {
+    orm.update(burger_id, (response) => {
+      cb(response);
+    });
+  },
 };
 
 module.exports = burger;

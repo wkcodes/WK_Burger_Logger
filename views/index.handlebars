@@ -1,23 +1,24 @@
 <h1>Burgers</h1>
 
-<h2>Burgers to devour: </h2>
-
-<ul>
-    {{#each burgers}}
-    {{#unless devoured}}
-    <div> {{ burger_name }} </div>
-    {{/unless}}
-    {{/each}}
-</ul>
+<div id="undevoured">
+    <h2>Burgers to devour: </h2>
+    <ul>
+        {{#each burgers}}
+        {{#unless devoured}}
+        {{ burger_name }}<button class="devour-btn" data-id={{burger_id}}>Eat da burger</button>
+        {{/unless}}
+        {{/each}}
+    </ul>
+</div>
 
 <h2>Add a burger: </h2>
 
-<form class="create-form">
+<form class=" create-form">
 
-    
+
     <label for="burgerName">Burger name:</label>
     <input type="text" id="burgerName" name="name">
-    
+
     <button type="submit">Add a burger</button>
 </form>
 

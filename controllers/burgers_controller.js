@@ -17,13 +17,18 @@ router.get("/", (req, res) => {
 });
 
 router.post("/api/burgers", (req, res) => {
-  burger.create(
-    ["burger_name", "devoured"],
-    [req.body.burger_name, req.body.devoured],
-    (result) => {
+  burger.create(req.body.burger_name, (result) => {
       res.json({ id: result.insertId });
       console.log("New ID: ", result.insertId);
     }
   );
 });
+
+router.put("/api/burgers/:id", (req, res) => {
+  burger.update( req.body.id, (result) => {
+    res.json({ burger_id: result.insertId});
+    console.log("Updated ID: ", result.insertId)
+  })
+})
+
 module.exports = router;

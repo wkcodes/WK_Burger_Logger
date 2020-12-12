@@ -1,8 +1,7 @@
 //On change function for devouring burgers
-console.log("jquery reached")
 $(function () {
   $(".devour-btn").on("click", function (event) {
-    /* let id = $(this).data("id");
+    let id = $(this).data("id");
     let newDevour = $(this).data("newDevour");
 
     let newDevourState = {
@@ -18,7 +17,7 @@ $(function () {
       // Reload the page to get the updated list
       location.reload();
     });
-  }); */
+  });
 
     $(".create-burger").on("submit", function (event) {
       console.log("clicked");

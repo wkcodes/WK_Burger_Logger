@@ -4,7 +4,7 @@
 
 <ul>
     {{#each burgers}}
-
+       <div> {{ burger_name }} burger_id={{ id }} </div>
     {{/each}}
 </ul>
 
@@ -13,12 +13,14 @@
 <form>
     <label for="burgerName">Burger name:</label>
     <input type="text" id="burgerName" name="burgerName">
+    <button type="submit">Add a burger</button>
 </form>
 
 <h2>Burger devoured: </h2>
 
 <ul>
     {{#each burgers}}
-
+        {{#if devoured}}
+        {{/if}}
     {{/each}}
 </ul>

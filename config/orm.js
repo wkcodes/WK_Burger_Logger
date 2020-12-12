@@ -37,19 +37,19 @@ function objToSql(ob) {
 //Custom ORM
 let orm = {
     all: (tableInput, cb) => {
-        let queryString = 'SELECT * FROM burgers;';
-        connection.query(queryString, function (err, result) {
+        let queryString = "SELECT * FROM burgers;";
+        connection.query(queryString, function (err, res) {
             if (err) {
                 throw err;
             }
-            cb(result);
+            cb(res);
         })
     },
     create: (newBurger, cb) => {
-        let queryString = 'INSERT INTO burgers (burger_name) VALUES ?';
-        connection.query(queryString, newBurger, (err, result) => {
+        let queryString = "INSERT INTO burgers (burger_name) VALUES ?";
+        connection.query(queryString, newBurger, (err, res) => {
             if(err) throw err;
-            cb(result)
+            cb(res)
         })
     }
 }

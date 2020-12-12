@@ -1,7 +1,7 @@
 const { response } = require("express");
 let orm = require("../config/orm.js");
 
-const burger = {
+let burger = {
   // Render all burgers
   all: (cb) => {
     orm.all("burgers", (response) => {

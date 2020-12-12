@@ -2,8 +2,15 @@
 $(function () {
   $(".devour-btn").on("click", function (event) {
 
+    let id = $(this).data("id");
+    let newDevour = $(this).data("newDevour");
+
+    let newDevourState = {
+      devoured: newDevour
+    };
+
     // Send the PUT request.
-    $.ajax("/api/update/" + id, {
+    $.ajax("/api/burgers/" + id, {
       type: "PUT",
       data: newDevourState,
     }).then(function () {
